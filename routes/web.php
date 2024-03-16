@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccountController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,6 @@ use Illuminate\Support\Facades\Route;
 
 // Link to get the front page.
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/account/registration', [AccountController::class, 'registration'])->name('account.registration');
+Route::post('/account/process-registration', [AccountController::class, 'processRegistration'])->name('account.processRegistration');
+
